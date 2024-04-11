@@ -1,4 +1,4 @@
-package main
+package linked_list
 
 import "fmt"
 
@@ -99,29 +99,4 @@ func traverse(head *ListNode) {
 		fmt.Printf("%d->", head.Val)
 		head = head.Next
 	}
-}
-
-func main() {
-	// 初始化各个节点
-	node1 := NewListNode(1)
-	node2 := NewListNode(3)
-	node3 := NewListNode(2)
-	node4 := NewListNode(4)
-	//构建节点之间的引用
-	node1.Next = node2
-	node2.Next = node3
-	node3.Next = node4
-	// 访问节点
-	res := access(node1, 1)
-	fmt.Println(res.Val)
-	// 插入节点
-	node5 := NewListNode(5)
-	insertNode(node1, node5)
-	// 遍历链表
-	traverse(node1)
-	// 删除节点
-	removeNode(node1)
-	traverse(node1)
-	// 查找节点
-	fmt.Println(findNode(node1, 3))
 }
